@@ -25,7 +25,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-gdlrS8l5fg3IYrJRVy27OxGjEJH5oCRG8xvo5LS2vJY=",
+      "hash": "sha256-F8m4OMzVQmhE1opwkC6mH16gzq74WTiWuRddhJ5sxZA=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1405,7 +1405,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-crjzzvVVYOT0FN8ja3TWjuuuh27J1pcFjUPKD4B1b\/k=",
+      "hash": "sha256-rgGyFmfWau0lHIinra4ATll7ySm0Mtsglz4BBHHrzMs=",
       "url": "index.html"
     },
     {
@@ -1481,5 +1481,5 @@
       "url": "SVGs\/silver-coin.png"
     }
   ],
-  "version": "vE2\/kL+b"
+  "version": "uP6Qb6C3"
 };
