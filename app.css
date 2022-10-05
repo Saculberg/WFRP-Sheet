@@ -1,0 +1,334 @@
+
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--text);
+    --font-height: 16px;
+}
+
+.center-children{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+button{
+    border-color:var(--accent);
+    background-color:var(--accent);
+    color:var(--text);
+    padding: 0.2rem;
+    padding-inline: 0.4rem;
+    border-radius:2px;
+    border-style:solid;
+}
+
+.tableStyleless{
+
+}
+
+    .tableStyleless td + td{
+        border-left:none;
+    }
+
+    .tableStyleless tr:nth-child(2n+1) {
+        background-color:transparent;
+    }
+
+    .tableStyleless td{
+        text-align:left;
+    }
+
+    tr:nth-child(2n+1) {
+        background-color: var(--dark);
+    }
+
+table{
+    border-collapse: collapse
+}
+
+table td + td {
+    border-left: 2px solid var(--accent);
+}
+
+td{
+    text-align:center;
+}
+
+input::-webkit-outer-spin-button :not(.showInputButton), input::-webkit-inner-spin-button :not(.showInputButton) {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+}*/
+
+input[type=number] {
+    background-color: transparent;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: var(--accent);
+    color: var(--text);
+    height: fit-content;
+    -moz-appearance: textfield;
+}
+
+.divider{
+    width:100%;
+    height:1px;
+    margin:1rem;
+    background-color:var(--accent);
+}
+
+.character-view-card {
+    width: 15rem;
+    height: 40rem;
+    background-color: var(--background);
+    padding: 1rem;
+    overflow-y: auto
+}
+
+    .character-view-card h3 {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius:2.5px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+    }
+
+@media (prefers-color-scheme: light) {
+    body, html {
+        --background: #f5efefff;
+        --textinput: #bec1c1;
+        --accent: #413c58ff;
+        --darkaccent: #ebebebff;
+        --dark: #485660ff;
+        --text: rgba(0, 0, 0, 1);
+        --fill: #ef233cff;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body, html {
+        --background: #1c2028;
+        --textinput: #3d4045;
+        --accent: #413c58ff;
+        --darkaccent: #ebebebff;
+        --dark: #76877dff;
+        --text: #f5efefff;
+        --fill: #ae2747;
+    }
+}
+
+input[type=text], input[type=email], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid var(--text);
+    background-color:var(--textinput);
+    color:var(--text);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.spinner {
+    display: block !important;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-color: var(--darkaccent);
+    border-width: 0.2rem;
+    border-top-color: var(--fill);
+    animation: linear spin 1s infinite;
+    border-style: solid;
+    margin: 0;
+    padding: 0;
+    transition: none 0s;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity:0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity:1;
+    }
+}
+
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeaway {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media only screen and (max-width: 390px) {
+    h1 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+    h3 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+    h4 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+    h5 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+}
+
+
+@media only screen and (max-width: 320px) {
+    h1 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h3 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
