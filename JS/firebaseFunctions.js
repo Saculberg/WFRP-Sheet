@@ -1,4 +1,16 @@
-﻿app.auth().setPersistence('session');
+﻿const firebaseConfig = {
+    apiKey: "AIzaSyDQ-6RxVKzl9dZdCm4-sJxkos8NAUg0QMs",
+    authDomain: "wfrp-character-sheet.firebaseapp.com",
+    projectId: "wfrp-character-sheet",
+    storageBucket: "wfrp-character-sheet.appspot.com",
+    messagingSenderId: "1031311869928",
+    appId: "1:1031311869928:web:9dddfde228c2db84d1465d",
+    measurementId: "G-FXTFVCBZBV"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+
+app.auth().setPersistence('session');
 
 /*app.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -72,9 +84,9 @@ function firebaseRetriveCurrentUser() {
     return app.auth().currentUser;
 };
 
-async function firebaseGetCharacterPreviews() {
+async function firebaseGetCharacterPreviews(uuid) {
     const chars = await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .get();
 
@@ -87,9 +99,9 @@ async function firebaseGetCharacterPreviews() {
     return ret;
 };
 
-async function firebaseGetCharacter(cid) {
+async function firebaseGetCharacter(cid, uuid) {
     const docRef = await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(cid);
 
@@ -180,13 +192,12 @@ async function firebaseGetCharacter(cid) {
     return JSON.stringify(char);
 };
 
-async function firebasePushNewCharacter(json) {
+async function firebasePushNewCharacter(json, uuid) {
     const c = JSON.parse(json);
 
     const skills = c.Skills;
     const talents = c.Talents;
     const effects = c.Effects;
-    const trappings = c.Trappings;
     const characteristics = c.Characteristics;
     const memorizedSpells = c.MemorizedSpells;
     const manifestedPrayers = c.ManifestedPrayers;
@@ -194,7 +205,6 @@ async function firebasePushNewCharacter(json) {
 
     delete c.Skills;
     delete c.Talents;
-    delete c.Trappings;
     delete c.Effects;
     delete c.Characteristics;
     delete c.MemorizedSpells;
@@ -202,7 +212,7 @@ async function firebasePushNewCharacter(json) {
     delete c.CareerPath;
 
     const docRef = await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .add(c);
 
@@ -223,12 +233,6 @@ async function firebasePushNewCharacter(json) {
 
     effects.forEach(x => {
         effectCol.add(x);
-    });
-
-    const trappingCol = docRef.collection("Trappings");
-
-    trappings.forEach(x => {
-        trappingCol.doc(x.Id).set(x);
     });
 
     const characteristicsCol = docRef.collection("Characteristics");
@@ -259,7 +263,7 @@ async function firebasePushNewCharacter(json) {
     return docRef.id;
 };
 
-async function firebaseUpdateCharacter(id, value) {
+async function firebaseUpdateCharacter(id, value, uuid) {
     const obj = JSON.parse(value)
 
     const skills = c.Skills;
@@ -281,7 +285,7 @@ async function firebaseUpdateCharacter(id, value) {
     delete c.CareerPath;
 
     await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(id)
         .set(obj);
@@ -349,20 +353,20 @@ async function firebaseUpdateCharacter(id, value) {
 
 };
 
-function firebaseUpdateField(characterId, value) {
+function firebaseUpdateField(characterId, value, uuid) {
     const obj = JSON.parse(value)
     app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(characterId)
         .update(obj);
 };
 
-async function firebaseUpdateSkillField(charId, skillName, skillSpec, value) {
+async function firebaseUpdateSkillField(charId, skillName, skillSpec, value, uuid) {
     const obj = JSON.parse(value);
 
     const skillColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Skills");
@@ -379,11 +383,11 @@ async function firebaseUpdateSkillField(charId, skillName, skillSpec, value) {
         
 }
 
-async function firebaseAddSkill(charId, value) {
+async function firebaseAddSkill(charId, value, uuid) {
     const obj = JSON.parse(value);
 
     const skillColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Skills");
@@ -392,11 +396,11 @@ async function firebaseAddSkill(charId, value) {
 }
 
 
-async function firebaseUpdateTalentField(charId, TalentName, value) {
+async function firebaseUpdateTalentField(charId, TalentName, value, uuid) {
     const obj = JSON.parse(value);
 
     const TalentColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Talents");
@@ -412,11 +416,11 @@ async function firebaseUpdateTalentField(charId, TalentName, value) {
 
 }
 
-async function firebaseAddTalent(charId, value) {
+async function firebaseAddTalent(charId, value, ) {
     const obj = JSON.parse(value);
 
     const TalentColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Talents");
@@ -424,12 +428,12 @@ async function firebaseAddTalent(charId, value) {
     TalentColRef.add(obj);
 }
 
-async function firebaseUpdateEffect(charId, value) {
+async function firebaseUpdateEffect(charId, value, uuid) {
     const obj = JSON.parse(value)
     const id = obj.Id;
 
     const EffectColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Effects");
@@ -443,11 +447,11 @@ async function firebaseUpdateEffect(charId, value) {
     });
 }
 
-async function firebaseAddEffect(charId, value) {
+async function firebaseAddEffect(charId, value, uuid) {
     const obj = JSON.parse(value);
 
     const EffectColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Effects");
@@ -455,9 +459,9 @@ async function firebaseAddEffect(charId, value) {
     EffectColRef.add(obj);
 }
 
-async function firebaseRemoveEffect(charId, effectID) {
+async function firebaseRemoveEffect(charId, effectID, uuid) {
     const EffectColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Effects");
@@ -471,52 +475,11 @@ async function firebaseRemoveEffect(charId, effectID) {
     })
 }
 
-async function firebaseUpdateTrappingPosition(charId, trapId, contId, index) {
-    const obj = {
-        ContainedIn: contId,
-        IndexInContainer: index
-    };
-
-    await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
-        .collection("Characters")
-        .doc(charId)
-        .collection("Trappings")
-        .doc(trapId)
-        .update(obj);
-}
-
-async function firebaseUpdateTrappingField(charId, trapId, value) {
-    const obj = JSON.parse(value);
-
-    await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
-        .collection("Characters")
-        .doc(charId)
-        .collection("Trappings")
-        .doc(trapId)
-        .update(obj);
-}
-
-async function firebaseAddTrapping(charId, trap) {
-    const obj = JSON.parse(trap);
-    const trapId = trap.Id;
-
-
-    await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
-        .collection("Characters")
-        .doc(charId)
-        .collection("Trappings")
-        .doc(trapId)
-        .set(obj);
-}
-
-async function firebaseUpdateCharacteristicField(charId, characteristicName, value) {
+async function firebaseUpdateCharacteristicField(charId, characteristicName, value, uuid) {
     const obj = JSON.parse(value);
 
     await  app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("Characteristics")
@@ -524,11 +487,11 @@ async function firebaseUpdateCharacteristicField(charId, characteristicName, val
         .update(obj);
 }
 
-async function firebaseAddMemorizedSpell(charId, value) {
+async function firebaseAddMemorizedSpell(charId, value, uuid) {
     const obj = JSON.parse(value);
 
     const MemorizedSpellColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("MemorizedSpell");
@@ -537,11 +500,11 @@ async function firebaseAddMemorizedSpell(charId, value) {
 }
 
 
-async function firebaseAddManifestedPrayer(charId, value) {
+async function firebaseAddManifestedPrayer(charId, value, uuid) {
     const obj = JSON.parse(value);
 
     const ManifestedPrayerColRef = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection("ManifestedPrayers");
@@ -549,11 +512,11 @@ async function firebaseAddManifestedPrayer(charId, value) {
     ManifestedPrayerColRef.add(obj);
 }
 
-async function firebaseAddCareer(charId, id, c) {
+async function firebaseAddCareer(charId, id, c, uuid) {
     const obj = JSON.parse(c);
 
     await app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection('Careers')
@@ -561,11 +524,11 @@ async function firebaseAddCareer(charId, id, c) {
         .set(obj);
 }
 
-async function firebaseUpdateCareerField(charId, id, value) {
+async function firebaseUpdateCareerField(charId, id, value, uuid) {
     const obj = JSON.parse(value);
 
     const ref = app.firestore().collection("Users")
-        .doc(firebase.auth().currentUser.uid)
+        .doc(uuid)
         .collection("Characters")
         .doc(charId)
         .collection('Careers')
