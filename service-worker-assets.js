@@ -25,7 +25,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-mqU6Hc\/vjT\/DYLhpDGH8uJ0M7yJY9f+IOpz34t2TPHc=",
+      "hash": "sha256-F6yQg4qQFh8EBLusDE+LjJ1OvS2Ie224SsBnPrPIfS8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1485,5 +1485,5 @@
       "url": "SVGs\/silver-coin.png"
     }
   ],
-  "version": "79AzGSxk"
+  "version": "d1c2fapE"
 };
