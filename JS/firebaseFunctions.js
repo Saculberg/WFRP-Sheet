@@ -197,6 +197,7 @@ async function firebasePushNewCharacter(json, uuid) {
 
     const skills = c.Skills;
     const talents = c.Talents;
+    const trappings = c.Trappings;
     const effects = c.Effects;
     const characteristics = c.Characteristics;
     const memorizedSpells = c.MemorizedSpells;
@@ -205,6 +206,7 @@ async function firebasePushNewCharacter(json, uuid) {
 
     delete c.Skills;
     delete c.Talents;
+    delete c.Trappings;
     delete c.Effects;
     delete c.Characteristics;
     delete c.MemorizedSpells;
@@ -227,6 +229,12 @@ async function firebasePushNewCharacter(json, uuid) {
 
     talents.forEach(x => {
         talentCol.add(x);
+    });
+
+    const trappingCol = docRef.collection("Trappings");
+
+    trappings.forEach(x => {
+        trappingCol.add(x);
     });
 
     const effectCol = docRef.collection("Effects");
@@ -395,6 +403,32 @@ async function firebaseAddSkill(charId, value, uuid) {
     skillColRef.add(obj);
 }
 
+async function firebaseAddTrapping(charId, value, uuid) {
+    const obj = JSON.parse(value);
+
+    const skillColRef = app.firestore().collection("Users")
+        .doc(uuid)
+        .collection("Characters")
+        .doc(charId)
+        .collection("Trappings")
+        .doc(obj.Id);
+
+    skillColRef.set(obj);
+}
+
+async function firebaseUpdateTrappingField(charId, TrappingId, value, uuid) {
+    const obj = JSON.parse(value);
+
+    const skillColRef = app.firestore().collection("Users")
+        .doc(uuid)
+        .collection("Characters")
+        .doc(charId)
+        .collection("Trappings")
+        .doc(TrappingId);
+
+    skillColRef.update(obj);
+}
+
 
 async function firebaseUpdateTalentField(charId, TalentName, value, uuid) {
     const obj = JSON.parse(value);
@@ -473,6 +507,17 @@ async function firebaseRemoveEffect(charId, effectID, uuid) {
     colRef.forEach(async x => {
         await EffectColRef.doc(x.id).delete();
     })
+}
+
+
+async function firebaseRemoveTrapping(charId, trapId, uuid) {
+    app.firestore().collection("Users")
+        .doc(uuid)
+        .collection("Characters")
+        .doc(charId)
+        .collection("Trappings")
+        .doc(trapId)
+        .delete();
 }
 
 async function firebaseUpdateCharacteristicField(charId, characteristicName, value, uuid) {

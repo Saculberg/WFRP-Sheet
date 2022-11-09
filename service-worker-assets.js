@@ -25,7 +25,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-F6yQg4qQFh8EBLusDE+LjJ1OvS2Ie224SsBnPrPIfS8=",
+      "hash": "sha256-pgYLDwFOeOjp2C0muOLhiSPtybtmJVVkaTTPVZbAE6w=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -753,11 +753,11 @@
       "url": "_framework\/System.Xml.XPath.XDocument.dll"
     },
     {
-      "hash": "sha256-uMEhVukhSS00n\/\/suImvCA6QzNHxm2f4+CgxUxv4Fz4=",
+      "hash": "sha256-FHrBiv3FekQ5ejqUiCqyQUH0R1oXm6+s\/RtKBzXk6OU=",
       "url": "_framework\/WFRP Backend.dll"
     },
     {
-      "hash": "sha256-arioO3mEXbFgC1iQLdJLmVaa6POfGEFsSAgcus\/ez5w=",
+      "hash": "sha256-7ZO0VAbw0GimPKL45CTEJjk+UpOQ2mZt+Su\/6jMWakU=",
       "url": "_framework\/WFRP Character Sheet.dll"
     },
     {
@@ -1413,7 +1413,7 @@
       "url": "index.html"
     },
     {
-      "hash": "sha256-JQ1BRnK9yBOc6kIOr7HLWfjy67Ml1q5aoCljNTmUs50=",
+      "hash": "sha256-dmbABeIjPP6YWZgoZ4uwtR1miZrPuYvOwkKh\/qls+zU=",
       "url": "JS\/firebaseFunctions.js"
     },
     {
@@ -1485,5 +1485,5 @@
       "url": "SVGs\/silver-coin.png"
     }
   ],
-  "version": "d1c2fapE"
+  "version": "fI8n0Hl+"
 };
