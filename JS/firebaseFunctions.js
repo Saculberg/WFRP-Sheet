@@ -450,7 +450,7 @@ async function firebaseUpdateTalentField(charId, TalentName, value, uuid) {
 
 }
 
-async function firebaseAddTalent(charId, value, ) {
+async function firebaseAddTalent(charId, value, uuid) {
     const obj = JSON.parse(value);
 
     const TalentColRef = app.firestore().collection("Users")
