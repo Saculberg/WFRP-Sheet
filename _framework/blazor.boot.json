@@ -32,7 +32,7 @@
       "Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll": "sha256-skqln11FBmWZnpqDe9N0crX\/gmMnVrN6VPuxuXEb7FA=",
       "Microsoft.CodeAnalysis.Workspaces.dll": "sha256-mfJMEBcJWoeCyHqi0du3MBoxX1dcNIiGEQAh3V4zAh0=",
       "Microsoft.CodeAnalysis.Workspaces.MSBuild.dll": "sha256-r3hxyCQ3e8E6gHgvIkzX0UTHyaCPesZI0NRJ7jlw3n4=",
-      "Microsoft.CSharp.dll": "sha256-+et+v+OUQpRhkv1y6CSWiuzbIN\/qCmy8i1nK7ngCe8A=",
+      "Microsoft.CSharp.dll": "sha256-ALaN1Kv6+qDK7k5AFxzCIUArd\/NGM82HcfpifyYZ0j4=",
       "Microsoft.Data.SqlClient.dll": "sha256-q4aFqOhr12NvawbvhHceJHeT\/cyTd3CA3BCag+EthU8=",
       "Microsoft.DiaSymReader.dll": "sha256-EYCsPJvmEe5Qhn8JBRppXAPtGdxPRty8Q4YchB+3dBs=",
       "Microsoft.DotNet.Scaffolding.Shared.dll": "sha256-uhh1x7TzovzDxi5RUgvC8gUbwSYuLHuQ64+kQ3S6t6k=",
@@ -121,7 +121,7 @@
       "System.IO.Pipelines.dll": "sha256-pJDHu2MZB3Wu7GfO6k+bRo7DrBLwTlw2Nyuzr0PILfo=",
       "System.IO.Pipes.dll": "sha256-Smm9YYttWTF8pTN7HnsAYIkBpLDjAVnfm77Fu1eh2xc=",
       "System.Linq.dll": "sha256-E1DsnQUNKJo9ZKPEOPT3np58p02GaDGnHrNhho0vTiE=",
-      "System.Linq.Expressions.dll": "sha256-7c616pi1mo+JbWyP5OGyx67g4iTqAaI4UdtKqWuIWmY=",
+      "System.Linq.Expressions.dll": "sha256-ImkP7AmGpR3dq8MXGyh+HEzXRhisJ+Y99J0MHPn0sWM=",
       "System.Linq.Parallel.dll": "sha256-GR6c8SxjzwSi1N6xdnLzQtVYwP1UC\/X9nKLYd0P6zKc=",
       "System.Linq.Queryable.dll": "sha256-z0aFNvcB+mZwoxapUl4K2jI8WdLBRnnCSUeyUnb7IbM=",
       "System.Memory.dll": "sha256-hu1w\/a40HsYxmP0oIMR9Anef3fMIeqD7to+LlgTQ9JE=",
@@ -189,8 +189,8 @@
       "System.Xml.XmlSerializer.dll": "sha256-qEZMUrdf6JZkvcUxcUxb0IrfZAvyAI9xwfVCnMKfaUg=",
       "System.Xml.XPath.dll": "sha256-a2LtU9DmsmDLj7aMkz3Ao3SEI7YWckBMEU1BheSPXwI=",
       "System.Xml.XPath.XDocument.dll": "sha256-u2cNmL6d5OIRmyJvG\/k8DbKEOnkGq83ZJOH5R1eFgKM=",
-      "WFRP Backend.dll": "sha256-qK7gVKpwuYX7q6AjHlKPp6AOzj+SV9fpehZoszFa6BA=",
-      "WFRP Character Sheet.dll": "sha256-3HoV6RW5y4rPnH33k+uN2Divc1dyxJCursgW3fGAOMA="
+      "WFRP Backend.dll": "sha256-Bn2VCZ6pHRHej6JnT4bb6K3dlR4O4YjcIrZTgdIRnus=",
+      "WFRP Character Sheet.dll": "sha256-Sl0O0XqBGuvg7FywOd+N4xtaaU66I\/wLiQmD3MKySfc="
     },
     "extensions": null,
     "lazyAssembly": null,
@@ -200,10 +200,10 @@
       "dotnet.6.0.11.xz9ue4xfet.js": "sha256-F30V+6jU3jwJYFZoLuwMAqzTiOXu6q7zGgOdjYBofDI=",
       "dotnet.timezones.blat": "sha256-Lv3h5dH3BV8JIZagipVCG0N\/oBjQF6jXUUWR6shkvws=",
       "dotnet.wasm": "sha256-uv9ggGYjOv1l7PZUHHHlIba88MjDiFYvp8OqO2qQGxY=",
-      "icudt.dat": "sha256-Zuq0dWAsBm6\/2lSOsz7+H9PvFaRn61KIXHMMwXDfvyE=",
       "icudt_CJK.dat": "sha256-WPyI4hWDPnOw62Nr27FkzGjdbucZnQD+Ph+GOPhAedw=",
       "icudt_EFIGS.dat": "sha256-4RwaPx87Z4dvn77ie\/ro3\/QzyS+\/gGmO3Y\/0CSAXw4k=",
-      "icudt_no_CJK.dat": "sha256-OxylFgLJlFqixsj+nLxYVsv5iZLvfIKMpLf9hrWaChA="
+      "icudt_no_CJK.dat": "sha256-OxylFgLJlFqixsj+nLxYVsv5iZLvfIKMpLf9hrWaChA=",
+      "icudt.dat": "sha256-Zuq0dWAsBm6\/2lSOsz7+H9PvFaRn61KIXHMMwXDfvyE="
     },
     "runtimeAssets": {
       "dotnet.wasm": {
