@@ -585,7 +585,7 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-etPtRT4\/YnAZqYe\/mG\/LHc8f2J+MkFDBBykoBOcfLxk=",
+      "hash": "sha256-dS6b1sl2P82B5XeyMjgALMnCMMwxKEItUQjgrNzPOZk=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1337,7 +1337,7 @@
       "url": "_framework\/System.Xml.XPath.XDocument.wasm"
     },
     {
-      "hash": "sha256-UgLs72odpiqAy4\/fLpGNg+zyCg6980Ibu1vuiO3VWwE=",
+      "hash": "sha256-iFjh98AXpH7onlDVZpIO6zVzcScMjwZ66UYkK2b\/uBM=",
       "url": "_framework\/WFRP Backend.wasm"
     },
     {
@@ -1437,5 +1437,5 @@
       "url": "SVGs\/silver-coin.png"
     }
   ],
-  "version": "FjD7C779"
+  "version": "wiO4fCJt"
 };

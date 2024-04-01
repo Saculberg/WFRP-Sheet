@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "WFRP Character Sheet",
   "resources": {
-    "hash": "sha256-M3jdP0R8JoUyORQ4ZusrgPVgLx+CPnXuuxmRglQIOxk=",
+    "hash": "sha256-z+XkM0YCGu8hxqvGyHXEWDIothtwhiEh1jGarvu+VWI=",
     "jsModuleNative": {
       "dotnet.native.8.0.3.9hu4p72scp.js": "sha256-wvajZ8bD/nhvQnyhMhwRQ6MzSy7Zoyaa6oJKXm3CfqI="
     },
@@ -202,7 +202,7 @@
       "System.Xml.XmlSerializer.wasm": "sha256-C1GaQcag4tlPFmU6eHu8Dq4ydFsrmsr8IRkT9Azverc=",
       "System.Xml.XPath.wasm": "sha256-JFXDpLkSKmwWtIkcmZKHZYxpFHdi2Zmx1tVtDE9UYTE=",
       "System.Xml.XPath.XDocument.wasm": "sha256-wUbdrsc47/xSx69I96CB2neJtN0iIp8t195mACvio9g=",
-      "WFRP Backend.wasm": "sha256-UgLs72odpiqAy4/fLpGNg+zyCg6980Ibu1vuiO3VWwE=",
+      "WFRP Backend.wasm": "sha256-iFjh98AXpH7onlDVZpIO6zVzcScMjwZ66UYkK2b/uBM=",
       "WFRP Character Sheet.wasm": "sha256-M6Wk1qIoiIvhiFJiloiXAiHZF1T6T9mhm1zhSEp/qF4="
     },
     "satelliteResources": {
